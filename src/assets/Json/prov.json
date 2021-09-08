@@ -1,0 +1,155 @@
+{
+   
+    "data": [
+        {
+            "province": "北京",
+            "eolProvId": 11,
+            "provinceId": 1
+        },
+        {
+            "province": "天津",
+            "eolProvId": 12,
+            "provinceId": 2
+        },
+        {
+            "province": "辽宁",
+            "eolProvId": 21,
+            "provinceId": 3
+        },
+        {
+            "province": "河北",
+            "eolProvId": 13,
+            "provinceId": 4
+        },
+        {
+            "province": "河南",
+            "eolProvId": 41,
+            "provinceId": 5
+        },
+        {
+            "province": "吉林",
+            "eolProvId": 22,
+            "provinceId": 6
+        },
+        {
+            "province": "黑龙江",
+            "eolProvId": 23,
+            "provinceId": 7
+        },
+        {
+            "province": "内蒙古",
+            "eolProvId": 15,
+            "provinceId": 8
+        },
+        {
+            "province": "山东",
+            "eolProvId": 37,
+            "provinceId": 9
+        },
+        {
+            "province": "山西",
+            "eolProvId": 14,
+            "provinceId": 10
+        },
+        {
+            "province": "陕西",
+            "eolProvId": 61,
+            "provinceId": 11
+        },
+        {
+            "province": "甘肃",
+            "eolProvId": 62,
+            "provinceId": 12
+        },
+        {
+            "province": "宁夏",
+            "eolProvId": 64,
+            "provinceId": 13
+        },
+        {
+            "province": "青海",
+            "eolProvId": 63,
+            "provinceId": 14
+        },
+        {
+            "province": "新疆",
+            "eolProvId": 65,
+            "provinceId": 15
+        },
+        {
+            "province": "上海",
+            "eolProvId": 31,
+            "provinceId": 16
+        },
+        {
+            "province": "江苏",
+            "eolProvId": 32,
+            "provinceId": 17
+        },
+        {
+            "province": "浙江",
+            "eolProvId": 33,
+            "provinceId": 18
+        },
+        {
+            "province": "安徽",
+            "eolProvId": 34,
+            "provinceId": 19
+        },
+        {
+            "province": "广东",
+            "eolProvId": 44,
+            "provinceId": 20
+        },
+        {
+            "province": "海南",
+            "eolProvId": 46,
+            "provinceId": 21
+        },
+        {
+            "province": "广西",
+            "eolProvId": 45,
+            "provinceId": 22
+        },
+        {
+            "province": "云南",
+            "eolProvId": 53,
+            "provinceId": 23
+        },
+        {
+            "province": "贵州",
+            "eolProvId": 52,
+            "provinceId": 24
+        },
+        {
+            "province": "四川",
+            "eolProvId": 51,
+            "provinceId": 25
+        },
+        {
+            "province": "重庆",
+            "eolProvId": 50,
+            "provinceId": 26
+        },
+        {
+            "province": "福建",
+            "eolProvId": 35,
+            "provinceId": 30
+        },
+        {
+            "province": "江西",
+            "eolProvId": 36,
+            "provinceId": 31
+        },
+        {
+            "province": "湖南",
+            "eolProvId": 43,
+            "provinceId": 32
+        },
+        {
+            "province": "湖北",
+            "eolProvId": 42,
+            "provinceId": 33
+        }
+    ]
+}
