@@ -1,11 +1,4 @@
-/*
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:58
- * @LastEditTime: 2021-09-08 10:45:22
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\http\api.js
- */
+
 import qs from 'qs';
 import { apiAxios} from "./request.js";
 

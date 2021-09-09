@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-01 17:39:52
- * @LastEditTime: 2021-09-09 09:38:39
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \all-know\src\views\home\components\provComponentPage.vue
--->
+
 <template>
   <div class="provPage">
     <baseInfo :selectProvBaseData="selectProvBaseData" />

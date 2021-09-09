@@ -1,11 +1,12 @@
 /*
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:58
- * @LastEditTime: 2021-09-08 16:06:18
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:56:21
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \all-know\src\plugins\vant.js
+ * @FilePath: \allknow\src\plugins\vant.js
  */
+
 // 按需全局引入 vant组件
 import Vue from 'vue'
 import {

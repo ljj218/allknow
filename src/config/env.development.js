@@ -1,11 +1,12 @@
 /*
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:57
- * @LastEditTime: 2021-09-01 17:56:03
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:55:37
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\config\env.development.js
+ * @FilePath: \allknow\src\config\env.development.js
  */
+
 /**本地环境配置
  * axios 0.18.1以后的版本不支持自定义属性  这里需要修改 axios源码 mergeConfig.js 第25行
  */

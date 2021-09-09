@@ -1,11 +1,12 @@
 /*
- * @Author: long_jj
- * @Date: 2021-09-08 09:45:44
- * @LastEditTime: 2021-09-08 09:45:44
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:56:39
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\utils\index.js
+ * @FilePath: \allknow\src\utils\index.js
  */
+
    export const mobileCheck=  ()=> {
     let check = false;
     (function (a) {

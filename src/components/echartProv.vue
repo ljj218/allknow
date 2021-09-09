@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-02 15:14:28
- * @LastEditTime: 2021-09-09 09:18:00
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:55:00
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \all-know\src\components\echartProv.vue
+ * @FilePath: \allknow\src\components\echartProv.vue
 -->
+
 <template>
   <div id="china_map_box">
     <div id="china_map_prov" ref="china_map_prov" ></div>

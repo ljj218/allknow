@@ -1,11 +1,12 @@
 /*
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:58
- * @LastEditTime: 2021-09-02 11:35:34
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:55
+ * @LastEditTime: 2021-09-09 09:57:29
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\main.js
+ * @FilePath: \allknow\src\main.js
  */
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'

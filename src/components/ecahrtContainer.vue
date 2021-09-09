@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-02 10:18:47
- * @LastEditTime: 2021-09-08 10:16:00
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:54:46
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\ecahrtContainer.vue
+ * @FilePath: \allknow\src\components\ecahrtContainer.vue
 -->
+
 <template>
   <div class="container">
     <itemTitle :title="title" />

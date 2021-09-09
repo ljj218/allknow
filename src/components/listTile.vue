@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-01 17:34:20
- * @LastEditTime: 2021-09-08 09:59:16
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\listTile.vue
--->
+
 <template>
   <div class="container listTile">
     <itemTitle :title="title" class="marb18" />

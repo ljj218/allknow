@@ -1,11 +1,12 @@
 /*
- * @Author: mentals@foxmail.com 
- * @Date: 2020-11-06 18:36:14 
- * @Last Modified by: mentals@foxmail.com
- * @Last Modified time: 2020-11-13 18:58:08
- * @Description: 项目需要的公共配置 以常量的形式保存这里 并输出
- * 可以根据自己的需要进行扩充
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:55:47
+ * @LastEditors: dragon
+ * @Description: 
+ * @FilePath: \allknow\src\config\index.js
  */
+
 
 //根据环境引入不同配置 process.env.VUE_APP_ENV
 const environment = process.env.VUE_APP_ENV || 'development'

@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-06 15:08:39
- * @LastEditTime: 2021-09-07 09:48:04
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\schoolList.vue
--->
+
 <template>
   <div class="schoolList">
     <van-sticky>

@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-01 17:39:52
- * @LastEditTime: 2021-09-07 17:39:25
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\home\components\nationalComponentPage.vue
--->
+
 <template>
   <div class="provPage">
     <p class="headTitle">— 2021年全国考生累计<span>1078万</span></p>

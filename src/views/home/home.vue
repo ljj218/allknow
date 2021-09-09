@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:58
- * @LastEditTime: 2021-09-08 14:55:59
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\home\home.vue
--->
+
 <template>
   <div class="home">
     <div class="fixed-container">

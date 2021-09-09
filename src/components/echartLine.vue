@@ -1,10 +1,10 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-08 10:01:01
- * @LastEditTime: 2021-09-09 09:35:04
- * @LastEditors: long_jj
- * @Description:  
- * @FilePath: \all-know\src\components\echartLine.vue
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:54:56
+ * @LastEditors: dragon
+ * @Description: 
+ * @FilePath: \allknow\src\components\echartLine.vue
 -->
 
 <template>

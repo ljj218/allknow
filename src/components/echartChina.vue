@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-02 15:14:28
- * @LastEditTime: 2021-09-09 09:17:50
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:54:52
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \all-know\src\components\echartChina.vue
+ * @FilePath: \allknow\src\components\echartChina.vue
 -->
+
 <template>
   <div id="china_map_box">
     <div

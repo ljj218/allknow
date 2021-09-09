@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-02 10:01:27
- * @LastEditTime: 2021-09-02 10:16:57
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:57:08
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\home\components\banner.vue
+ * @FilePath: \allknow\src\views\home\components\banner.vue
 -->
+
 <template>
   <div class="banner" @click="openWindow">
       <img src="@image/banner.gif" alt="">

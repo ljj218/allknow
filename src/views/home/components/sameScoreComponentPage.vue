@@ -1,11 +1,4 @@
-<!--
- * @Author: long_jj
- * @Date: 2021-09-01 17:39:52
- * @LastEditTime: 2021-09-07 17:25:40
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\home\components\sameScoreComponentPage.vue
--->
+
 <template>
   <div class="provPage">
     <div class="scoreInfoWrap">

@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-01 17:35:55
- * @LastEditTime: 2021-09-02 10:38:37
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:55:05
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\itemTitle.vue
+ * @FilePath: \allknow\src\components\itemTitle.vue
 -->
+
 <template>
   <div class="_title">
     <div class="line"></div>

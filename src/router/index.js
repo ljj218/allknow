@@ -1,11 +1,4 @@
-/*
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:58
- * @LastEditTime: 2021-09-07 16:14:34
- * @LastEditors: long_jj
- * @Description: 
- * @FilePath: \vue-template-demo-master\src\router\index.js
- */
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 

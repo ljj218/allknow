@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-02 14:13:00
- * @LastEditTime: 2021-09-06 17:13:22
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 09:55:17
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\more.vue
+ * @FilePath: \allknow\src\components\more.vue
 -->
+
 <template>
     <div class="more" @click="routerTo">
         {{text}}

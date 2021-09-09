@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:57
- * @LastEditTime: 2021-09-08 14:59:54
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:55
+ * @LastEditTime: 2021-09-09 09:57:02
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\App.vue
+ * @FilePath: \allknow\src\App.vue
 -->
+
 <template>
   <div id="app">
     <transition :name="transitionName">
