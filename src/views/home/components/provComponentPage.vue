@@ -15,14 +15,14 @@
       :title="selectProv.province + '考生填报院校TOP300'"
       text="更多热门院校"
       :list="univList"
-      :path="'/schoolList?type=1&id=' + selectProv.provinceId"
+      :path="'/est/schoolList?type=1&id=' + selectProv.provinceId"
     />
 
     <listTile
       :title="selectProv.province + '考生填报专业TOP300'"
       text="更多热门专业"
       :list="MajorList"
-      :path="'/majorList?type=1&id=' + selectProv.provinceId"
+      :path="'/est/majorList?type=1&id=' + selectProv.provinceId"
     />
 
     <ecahrtContainer
@@ -30,7 +30,7 @@
       :list="provBaseList"
       text="全部报考本省城市排名"
       :path="
-        '/mapPreview?type=1&id=' +
+        '/est/mapPreview?type=1&id=' +
         selectProv.provinceId +
         '&province=' +
         selectProv.province
@@ -44,7 +44,7 @@
       :list="cityOuterList"
       text="全部报考外省城市排名"
       :path="
-        '/mapPreview?type=2&id=' +
+        '/est/mapPreview?type=2&id=' +
         selectProv.provinceId +
         '&province=' +
         selectProv.province

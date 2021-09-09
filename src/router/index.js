@@ -11,9 +11,9 @@ VueRouter.prototype.push = function push(location) {
 
 const routes = [{
     path: '*',
-    redirect: "/home"
+    redirect: "/"
   }, {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: () => import('@/views/home/home.vue'),
     meta: {
@@ -24,7 +24,7 @@ const routes = [{
       login: false
     }
   },{
-    path: '/schoolList',
+    path: '/est/schoolList',
     name: 'schoolList',
     component: () => import('@/views/schoolList.vue'),
     meta: {
@@ -35,7 +35,7 @@ const routes = [{
       login: false
     }
   },{
-    path: '/majorList',
+    path: '/est/majorList',
     name: 'majorList',
     component: () => import('@/views/majorList.vue'),
     meta: {
@@ -46,7 +46,7 @@ const routes = [{
       login: false
     }
   },{
-    path: '/mapPreview',
+    path: '/est/mapPreview',
     name: 'mapPreview',
     component: () => import('@/views/mapPreview.vue'),
     meta: {
@@ -62,6 +62,7 @@ const routes = [{
 
 const router = new VueRouter({
   mode: 'history',
+  base:'/t/gkdata',
   routes
 })
 

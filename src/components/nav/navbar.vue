@@ -1,11 +1,12 @@
 <!--
- * @Author: long_jj
- * @Date: 2021-09-01 15:34:57
- * @LastEditTime: 2021-09-08 14:55:09
- * @LastEditors: long_jj
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-09 10:00:39
+ * @LastEditors: dragon
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\nav\navbar.vue
+ * @FilePath: \allknow\src\components\nav\navbar.vue
 -->
+
 <template>
   <van-nav-bar class="_nav-bar" :title="$route.meta.title" 
   :left-arrow="$route.meta.showHeaderBack" @click-left="$router.back()">

@@ -8,19 +8,19 @@
       title="全国考生填报院校TOP500"
       text="更多热门院校"
       :list="univList"
-       path="/schoolList?type=3"
+       path="/est/schoolList?type=3"
     ></listTile>
     <listTile
       title="全国考生填报专业TOP500"
       text="更多热门专业"
       :list="MajorList"
-       path="/majorList?type=3"
+       path="/est/majorList?type=3"
     ></listTile>
     <ecahrtContainer
       title="全国考生填报省份排行"
       :list=" provBaseList"
       text="全部报考省份"
-       path="/mapPreview?type=5"
+       path="/est/mapPreview?type=5"
     >
       <echartChina :list="provBaseList" type="1" />
     </ecahrtContainer>
@@ -28,7 +28,7 @@
       title="全国考生填报城市TOP100"
       :list="cityOuterList"
       text="全部报考城市"
-       path="/mapPreview?type=6"
+       path="/est/mapPreview?type=6"
     >
       <echartChina :list="cityOuterList" />
     </ecahrtContainer>

@@ -30,7 +30,7 @@ const cdn = {
 
 module.exports = {
   productionSourceMap: false,
-  publicPath: './',
+  publicPath:IS_PROD? "./":'/',
   assetsDir: "static", //  outputDir的静态资源(js、css、img、fonts)目录
   lintOnSave: true, //是否在保存的时候使用 `eslint-loader` 进行检查。
   devServer: {
@@ -110,7 +110,7 @@ module.exports = {
     // 注入cdn路径 需要在public index.html里面展开
     config.plugin('html').tap(args => {
 
-      args[0].cdn = cdn.build // 这里只是为html模板展开提供数据，最终打包cdn起效果的还是 config.externals，打包时报错请注意config.externals
+      // args[0].cdn = cdn.build // 这里只是为html模板展开提供数据，最终打包cdn起效果的还是 config.externals，打包时报错请注意config.externals
 
       args[0].title = name // 注入html title
       return args

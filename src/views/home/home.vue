@@ -60,7 +60,7 @@ export default {
   name: "Home",
   data() {
     return {
-      activeNames: 1,
+      activeNames: 2,
       show: false,
       provList: "",
       province: "北京",
@@ -93,10 +93,11 @@ export default {
   },
   created() {
     this.provList = prov.data;
+    this.province=this.$route.query.province||'北京';
   },
   mounted() {
     this.getchoiceMode();
-    this.$refs.provComponentPage.initData();
+    //  this.$refs.sameScoreComponentPage.initData();
   },
   methods: {
     changePage(num) {
@@ -106,8 +107,9 @@ export default {
         this.show = false;
       }
       this.activeNames = num;
-      if(num==2){
-        this.$refs.sameScoreComponentPage.initData();
+      if(num==1){
+         this.$refs.provComponentPage.initData();
+       
       }else if(num==3){
         this.$refs.nationalComponentPage.initData();
       }

@@ -9,7 +9,6 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="keywords" content="掌上志愿，高考,志愿填报,大学,招生信息,招生简章,招生计划,本科专业,高职专业,录取分数线" data-react-helmet="true">
     <meta name="description" content="掌上志愿为考生提供最权威的高校招生信息查询，内容包括：本科专业查询、高职专业查询、高考招生计划和招生简章查询、各省及高校历年录取分数线查询、分专业录取分数线查询，并提供高考招生咨询及招办主任政策解读服务。" data-react-helmet="true">
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- 使用CDN的CSS文件 本地开发请注释掉-->
     <!-- <% for (var i in htmlWebpackPlugin.options.cdn &&
     htmlWebpackPlugin.options.cdn.css) { %>
@@ -29,7 +28,7 @@
     <% } %> -->
   </body>
   <!-- 动态dpr -->
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
     function setDpr() {
       var docEl = document.documentElement
         , dpr = window.devicePixelRatio || 1;
@@ -39,5 +38,5 @@
     window.onresize = function () {
       setDpr()
     }
-  </script> -->
+  </script>
 </html>

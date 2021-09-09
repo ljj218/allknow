@@ -1,69 +1,72 @@
 
 <template>
   <div class="schoolList">
-    <van-sticky>
-      <div class="nav">
-        <van-nav-bar
-          class="_nav-bar"
-          :title="title"
-          :left-arrow="arrow"
-          @click-left="$router.back()"
-        ></van-nav-bar>
-        <van-dropdown-menu active-color="#f60">
-          <van-dropdown-item
-            v-model="choiceProvinceId"
-            :options="provList"
-            @change="change"
-          />
-          <van-dropdown-item
-            v-model="levelId"
-            :options="levelList"
-            @change="change"
-          />
-          <van-dropdown-item
-            v-model="typeId"
-            :options="typeList"
-            @change="change"
-          />
-        </van-dropdown-menu>
-      </div>
-    </van-sticky>
-    <van-list
-      v-model="loading"
-      :finished="finished"
-      :immediate-check="check"
-      finished-text="没有更多了"
-      @load="onLoad"
-    >
-      <div
-        class="item"
-        v-for="(item, index) in univList"
-        :key="item.univName"
-        :title="item"
+    <!-- <van-sticky>
+    
+    </van-sticky> -->
+    <div class="nav">
+      <van-nav-bar
+        class="_nav-bar"
+        :title="title"
+        :left-arrow="arrow"
+        @click-left="$router.back()"
+      ></van-nav-bar>
+      <van-dropdown-menu active-color="#f60">
+        <van-dropdown-item
+          v-model="choiceProvinceId"
+          :options="provList"
+          @change="change"
+        />
+        <van-dropdown-item
+          v-model="levelId"
+          :options="levelList"
+          @change="change"
+        />
+        <van-dropdown-item
+          v-model="typeId"
+          :options="typeList"
+          @change="change"
+        />
+      </van-dropdown-menu>
+    </div>
+    <div class="list">
+      <van-list
+        v-model="loading"
+        :finished="finished"
+        :immediate-check="check"
+        finished-text="没有更多了"
+        @load="onLoad"
       >
-        <div class="flex">
-          <div class="rank" :class="{ bc: index < 3 }">{{ index + 1 }}</div>
-          <img
-            v-if="item.eolUnivId"
-            :src="
-              'https://static-data.eol.cn/upload/logo/' +
-              item.eolUnivId +
-              '.jpg'
-            "
-            class="img"
-          />
-          <div class="ml">
-            <p class="name">{{ item.univName }}</p>
-            <p class="label" v-if="item.label">{{ item.label }}</p>
+        <div
+          class="item"
+          v-for="(item, index) in univList"
+          :key="item.univName"
+          :title="item"
+        >
+          <div class="flex">
+            <div class="rank" :class="{ bc: index < 3 }">{{ index + 1 }}</div>
+            <img
+              v-if="item.eolUnivId"
+              :src="
+                'https://static-data.eol.cn/upload/logo/' +
+                item.eolUnivId +
+                '.jpg'
+              "
+              class="img"
+            />
+            <div class="ml">
+              <p class="name">{{ item.univName }}</p>
+              <p class="label" v-if="item.label">{{ item.label }}</p>
+            </div>
+          </div>
+          <div class="count">
+            {{ item.reportNum | formatNum }}
+            <span class="num">万</span>
+            <span class="tag">次</span>
           </div>
         </div>
-        <div class="count">
-          {{ item.reportNum | formatNum }}
-          <span class="num">万</span>
-          <span class="tag">次</span>
-        </div>
-      </div>
-    </van-list>
+      </van-list>
+    </div>
   </div>
 </template>
 
@@ -242,8 +245,13 @@ export default {
 <style scoped lang="scss">
 .schoolList {
   height: 100vh;
-  .van-list {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .list {
     width: 100%;
+    height: 100%;
+    overflow: auto;
   }
   .nav {
     width: 100%;

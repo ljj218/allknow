@@ -39,7 +39,7 @@
       text="更多热门院校"
       :list="univList"
       :path="
-        '/schoolList?type=2&id=' +
+        '/est/schoolList?type=2&id=' +
         selectProv.provinceId +
         '&majorTypeId=' +
         majorTypeId +
@@ -52,7 +52,7 @@
       text="更多热门专业"
       :list="MajorList"
       :path="
-        '/majorList?type=2&id=' +
+        '/est/majorList?type=2&id=' +
         selectProv.provinceId +
         '&majorTypeId=' +
         majorTypeId +
@@ -65,7 +65,7 @@
       :list="provBaseList"
       text="全部报考本省城市排名"
       :path="
-        '/mapPreview?type=3&id=' +
+        '/est/mapPreview?type=3&id=' +
         selectProv.provinceId +
         '&province=' +
         selectProv.province +
@@ -82,7 +82,7 @@
       :list="cityOuterList"
       text="全部报考外省城市排名"
        :path="
-        '/mapPreview?type=4&id=' +
+        '/est/mapPreview?type=4&id=' +
         selectProv.provinceId +
         '&province=' +
         selectProv.province +
@@ -185,12 +185,16 @@ export default {
       show: false,
     };
   },
+  created(){
+    this.score=this.$route.query.score||550;
+  },
   methods: {
     initData() {
+      console.log(this.choiceMode);
       if (
         this.univList.length > 0 &&
         this.MajorList.length > 0 &&
-        this.selectProvBaseData
+        this.selectProvBaseData&&!this.choiceMode
       )
         return;
       this.getReportSameCountByProvince();
@@ -301,6 +305,7 @@ export default {
       } else {
         this.majorTypeId = "";
       }
+      this.initData();
     },
   },
 };
