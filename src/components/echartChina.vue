@@ -1,17 +1,16 @@
 <!--
  * @Author: long_jj
  * @Date: 2021-09-02 15:14:28
- * @LastEditTime: 2021-09-07 16:43:23
+ * @LastEditTime: 2021-09-09 09:17:50
  * @LastEditors: long_jj
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\components\echartChina.vue
+ * @FilePath: \all-know\src\components\echartChina.vue
 -->
 <template>
   <div id="china_map_box">
     <div
       id="china_map"
       ref="china_map"
-      style="width: 180px; height: 160px"
     ></div>
   </div>
 </template>
@@ -93,8 +92,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// .china_map{
-//     width: 180px;
-//     height: 160px;
-// }
+#china_map{
+    width: 180px;
+    height: 160px;
+}
 </style>

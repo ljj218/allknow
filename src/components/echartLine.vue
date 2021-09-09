@@ -1,7 +1,7 @@
 <!--
  * @Author: long_jj
  * @Date: 2021-09-08 10:01:01
- * @LastEditTime: 2021-09-08 16:29:35
+ * @LastEditTime: 2021-09-09 09:35:04
  * @LastEditors: long_jj
  * @Description:  
  * @FilePath: \all-know\src\components\echartLine.vue
@@ -12,7 +12,6 @@
     <div
       id="china_map_prov"
       ref="china_map_prov"
-      style="width: 330px; height: 160px"
     ></div>
   </div>
 </template>
@@ -97,4 +96,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#china_map_prov{
+  width: 330px; height: 160px;
+  background-color: rgb(245, 246, 247);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 </style>

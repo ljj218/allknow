@@ -1,10 +1,10 @@
 <!--
  * @Author: long_jj
  * @Date: 2021-09-07 16:07:22
- * @LastEditTime: 2021-09-07 17:40:31
+ * @LastEditTime: 2021-09-09 09:20:05
  * @LastEditors: long_jj
  * @Description: 
- * @FilePath: \vue-template-demo-master\src\views\mapPreview.vue
+ * @FilePath: \all-know\src\views\mapPreview.vue
 -->
 <template>
   <div>
@@ -18,7 +18,6 @@
     <div
       id="china_map"
       ref="china_map"
-      style="width: 350px; height: 320px"
     ></div>
 
     <ul class="list">
@@ -233,6 +232,7 @@ export default {
 
 <style scoped lang="scss">
 #china_map {
+  width: 350px; height: 320px;
   margin: auto;
 }
 .list {

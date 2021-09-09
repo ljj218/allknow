@@ -1,7 +1,7 @@
 <!--
  * @Author: long_jj
  * @Date: 2021-09-01 17:39:52
- * @LastEditTime: 2021-09-08 16:16:53
+ * @LastEditTime: 2021-09-09 09:38:39
  * @LastEditors: long_jj
  * @Description: 
  * @FilePath: \all-know\src\views\home\components\provComponentPage.vue
@@ -12,7 +12,10 @@
     <banner />
     <div class="container">
       <itemTitle title="本省考生成绩分布图" />
-      <echartLine :list="lineList"/>
+      <echartLine :list="lineList" />
+      <div class="more flex justify-content align-items" @click="openWindow">
+        查看一分一段<van-icon name="arrow" />
+      </div>
     </div>
 
     <listTile
@@ -76,6 +79,8 @@ import echartChina from "@components/echartChina.vue";
 import echartProv from "@components/echartProv.vue";
 import itemTitle from "@components/itemTitle.vue";
 import echartLine from "@components/echartLine.vue";
+import { mobileCheck } from "../../../utils/index.js";
+
 export default {
   name: "provComponentPage",
   components: {
@@ -101,7 +106,7 @@ export default {
       MajorList: [],
       cityOuterList: [],
       provBaseList: [],
-      lineList:null,
+      lineList: null,
     };
   },
   computed: {},
@@ -207,8 +212,17 @@ export default {
           year: 2021,
           majorTypeId: 3,
         });
-        this.lineList=res.data||[];
+        this.lineList = res.data || [];
       } catch (error) {}
+    },
+    openWindow() {
+      let url = "";
+      if (mobileCheck()) {
+        url = `https://m.51sdx.com/m/`;
+      } else {
+        url = `https://51sdx.com/provranked`;
+      }
+      window.open(url, "_blank");
     },
   },
   watch: {
@@ -230,5 +244,10 @@ export default {
   padding: 16px 12px;
   background-color: #fff;
   border-radius: 10px;
+}
+.more {
+  border-top: 0.02667rem solid #efefef;
+  padding-top: 11px;
+  color: #8c8c8c;
 }
 </style>
