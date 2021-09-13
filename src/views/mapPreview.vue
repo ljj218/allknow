@@ -249,7 +249,7 @@ export default {
     width: 30px;
   }
   .name {
-    width: 60px;
+    width: 100px;
     text-indent: 10px;
   }
   .bc {

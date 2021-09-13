@@ -1,9 +1,6 @@
 
 <template>
   <div class="schoolList">
-    <!-- <van-sticky>
-    
-    </van-sticky> -->
     <div class="nav">
       <van-nav-bar
         class="_nav-bar"
@@ -29,7 +26,7 @@
         />
       </van-dropdown-menu>
     </div>
-    <div class="list">
+    <div class="list" v-if="univList.length>0">
       <van-list
         v-model="loading"
         :finished="finished"
@@ -67,6 +64,7 @@
         </div>
       </van-list>
     </div>
+     <van-empty v-else class="center" image="search" description="未匹配到相关院校" />
   </div>
 </template>
 
@@ -302,5 +300,8 @@ export default {
       margin-left: 12px;
     }
   }
+}
+.center{
+  margin-top: 60px;
 }
 </style>

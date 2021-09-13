@@ -1,7 +1,7 @@
 /*
  * @Author: dragon
  * @Date: 2021-09-08 17:43:56
- * @LastEditTime: 2021-09-09 09:56:21
+ * @LastEditTime: 2021-09-13 11:02:41
  * @LastEditors: dragon
  * @Description: 
  * @FilePath: \allknow\src\plugins\vant.js
@@ -23,12 +23,13 @@ import {
   DropdownItem,
   List ,
   Sticky ,
-  ActionSheet 
+  ActionSheet ,
+  Empty 
 } from 'vant'
 
 [Button,
   NavBar, Toast, Dialog, Icon, Popup, Picker, Skeleton,DropdownMenu,
-  DropdownItem,List ,Sticky ,ActionSheet 
+  DropdownItem,List ,Sticky ,ActionSheet ,Empty 
 ].forEach(e => {
   Vue.use(e)
 })

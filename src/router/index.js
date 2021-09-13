@@ -1,3 +1,11 @@
+/*
+ * @Author: dragon
+ * @Date: 2021-09-08 17:43:56
+ * @LastEditTime: 2021-09-13 09:39:10
+ * @LastEditors: dragon
+ * @Description: 
+ * @FilePath: \allknow\src\router\index.js
+ */
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -62,7 +70,8 @@ const routes = [{
 
 const router = new VueRouter({
   mode: 'history',
-  base:'/t/gkdata',
+  // base:'/t/gkdata',//测试
+  base:'/p/gkdata',//正式
   routes
 })
 

@@ -1,113 +1,66 @@
 
 <template>
   <div class="schoolList">
-    <van-sticky>
-      <div class="nav">
-        <van-nav-bar
-          class="_nav-bar"
-          :title="title"
-          :left-arrow="arrow"
-          @click-left="$router.back()"
-        ></van-nav-bar>
-        <ul class="flex options space-around">
-          <li
-            class="item flex align-items justify-content"
-            @click="showpicker = true"
-          >
-            <span>{{ levelName || "层次" }}</span>
-            <van-icon name="play" class="rotate" size="10" />
-          </li>
-          <li
-            class="item flex align-items justify-content"
-            @click="showOptions = true"
-          >
-            {{ tempTypeName || "门类" }}
-            <van-icon name="play" class="rotate" size="10" />
-          </li>
-          <li
-            class="item flex align-items justify-content"
-            @click="showOptions = true"
-          >
-            {{ tempClassName || "类型" }}
-            <van-icon name="play" class="rotate" size="10" />
-          </li>
-        </ul>
-      </div>
-    </van-sticky>
-    <van-list
-      v-model="loading"
-      :finished="finished"
-      :immediate-check="check"
-      finished-text="没有更多了"
-      @load="onLoad"
-    >
-      <div
-        class="item"
-        v-for="(item, index) in univList"
-        :key="item.univName"
-        :title="item"
+    <div class="nav">
+      <van-nav-bar
+        class="_nav-bar"
+        :title="title"
+        :left-arrow="arrow"
+        @click-left="$router.back()"
+      ></van-nav-bar>
+      <van-dropdown-menu active-color="#f60">
+        <van-dropdown-item
+          v-model="levelId"
+          :options="levelList"
+          :title="levelName"
+          @change="changeCC"
+        >
+        </van-dropdown-item>
+        <van-dropdown-item
+          v-model="typeId"
+          :options="majorTypeList"
+          :title="typeName"
+          @change="changeTypeId"
+        />
+
+        <van-dropdown-item
+          v-model="classId"
+          :title="className"
+          :options="majorClassList"
+          @change="selectClassId"
+        />
+      </van-dropdown-menu>
+    </div>
+    <div class="list" v-if="univList.length>0">
+      <van-list
+        v-model="loading"
+        :finished="finished"
+        :immediate-check="check"
+        finished-text="没有更多了"
+        @load="onLoad"
       >
-        <div class="flex">
-          <div class="rank" :class="{ bc: index < 3 }">{{ index + 1 }}</div>
-          <div class="ml">
-            <p class="name">{{ item.majorName }}</p>
-            <p class="label" v-if="item.label">{{ item.label }}</p>
+        <div
+          class="item"
+          v-for="(item, index) in univList"
+          :key="item.univName"
+          :title="item"
+        >
+          <div class="flex">
+            <div class="rank" :class="{ bc: index < 3 }">{{ index + 1 }}</div>
+            <div class="ml">
+              <p class="name">{{ item.majorName }}</p>
+              <p class="label" v-if="item.label">{{ item.label }}</p>
+            </div>
+          </div>
+          <div class="count">
+            {{ item.reportNum | formatNum }}
+            <span class="num" v-if="item.reportNum > 10000">万</span>
+            <span class="tag">次</span>
           </div>
         </div>
-        <div class="count">
-          {{ item.reportNum | formatNum }}
-          <span class="num">万</span>
-          <span class="tag">次</span>
-        </div>
-      </div>
-    </van-list>
-
-    <van-popup v-model="showpicker" position="bottom"
-      ><van-picker
-        title=""
-        show-toolbar
-        :columns="levelList"
-        @confirm="onConfirm"
-        @cancel="onCancel"
-        :default-index="levelIdIndex"
-    /></van-popup>
-
-    <van-popup
-      v-model="showOptions"
-      position="bottom"
-      :style="{ height: '40%' }"
-    >
-      <div class="container flex flex-direction">
-        <div class="nav flex space-between">
-          <div @click="cancel">取消</div>
-          <div class="sure" @click="sure">确定</div>
-        </div>
-        <div class="content flex">
-          <ul class="leftScroll" :class="{ full: majorClassList.length == 0 }">
-            <li
-              class="_item"
-              v-for="(item, index) in majorTypeList"
-              @click="selectTypeId(item)"
-              :class="{ active: item.value == typeId }"
-              :key="index"
-            >
-              {{ item.text }}
-            </li>
-          </ul>
-          <ul class="rightScroll" v-if="majorClassList.length > 0">
-            <li
-              class="_item"
-              v-for="(item, index) in majorClassList"
-              :class="{ active: item.subclassId == classId }"
-              @click="selectClassId(item)"
-              :key="index"
-            >
-              {{ item.name }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </van-popup>
+      </van-list>
+    </div>
+    <van-empty v-else class="center" image="search" description="未匹配到相关专业" />
   </div>
 </template>
 
@@ -127,15 +80,12 @@ export default {
       check: false,
       title: "",
       provinceId: "",
-      type:'',
+      type: "",
       typeId: "",
-      typeName: "",
-      tempTypeName:'',
+      typeName: "门类",
       levelId: "", //1本科 2专科
-      levelName: "",
       classId: "",
-      className: "",
-      tempClassName: "",
+      className: "类型",
       majorTypeId: "",
       score: "",
       pageNo: 1,
@@ -144,18 +94,27 @@ export default {
       majorTypeList: [],
       classList: [],
       majorClassList: [],
-      levelList: ["全部", "本科", "专科"],
+      levelList: [
+        { text: "全部", value: "" },
+        { text: "本科", value: 1 },
+        { text: "专科", value: 2 },
+      ],
+      ccflag: false, //默认显示 层次 选择后只有全部
       loading: false,
       finished: false,
-      showpicker: false,
-      showOptions: false,
-      isChangeType: false, //是否重新选择门类 是true =》 1 选择了 类型 fasle 不选 直接确定 判断该值 重置classId
     };
   },
   computed: {
-    levelIdIndex() {
-      if (!this.levelId) return 0;
-      return this.levelId;
+    levelName() {
+      if (this.levelId === "" && !this.ccflag) {
+        return "层次";
+      } else if (this.levelId === "" && this.ccflag) {
+        return "全部";
+      } else if (this.levelId === 1) {
+        return "本科";
+      } else if (this.levelId === 2) {
+        return "专科";
+      }
     },
   },
   created() {
@@ -265,49 +224,43 @@ export default {
       try {
         let res = await MajorClassType({ classId: this.typeId });
         if ((res.resultCode = "0000")) {
-          let list = res.data;
-          list.unshift({
-            name: "全部",
-            subclassId: "",
+          let list = [];
+          list.push({
+            text: "全部",
+            value: "",
+          });
+          res.data.forEach((item) => {
+            list.push({
+              text: item.name,
+              value: item.subclassId,
+            });
           });
           this.majorClassList = list;
         }
       } catch (err) {}
     },
-    change(e) {
-      this.pageNo = 1;
+    changeCC(e) {
+      this.ccflag = true;
     },
-    onConfirm(e) {
-      this.levelName = e;
-      switch (e) {
-        case "全部":
-          this.levelId = "";
-          break;
-        case "本科":
-          this.levelId = 1;
-          break;
-        case "专科":
-          this.levelId = 2;
-          break;
-      }
-
-      this.showpicker = false;
+    change() {},
+    changeTypeId(item) {
+      this.majorTypeList.forEach((val) => {
+        if (val.value == item) {
+          this.typeName = val.text;
+        }
+      });
+      this.classId = "";
+      this.className = "类型";
+      this.getMajorClassType();
       this.init();
     },
-    onCancel() {
-      this.showpicker = false;
-    },
-    selectTypeId(item) {
-      if (item.value == this.typeId) return;
-      this.typeId = item.value;
-      this.typeName = item.text;
-      this.isChangeType = true;
-      this.getMajorClassType();
-    },
-    selectClassId(item) {
-      this.classId = item.subclassId;
-      this.className = item.name;
-      this.isChangeType = false;
+    selectClassId(e) {
+      this.majorClassList.forEach((val) => {
+        if (val.value == e) {
+          this.className = val.text;
+        }
+      });
+      this.init();
     },
     cancel() {
       this.showOptions = false;
@@ -318,8 +271,8 @@ export default {
         this.classId = "";
         this.className = "全部";
       }
-      this.tempClassName= this.className;
-      this.tempTypeName= this.typeName;
+      this.tempClassName = this.className;
+      this.tempTypeName = this.typeName;
       this.init();
     },
   },
@@ -329,8 +282,13 @@ export default {
 <style scoped lang="scss">
 .schoolList {
   height: 100vh;
-  .van-list {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .list {
     width: 100%;
+    height: 100%;
+    overflow: auto;
   }
   .nav {
     width: 375px;
@@ -442,5 +400,8 @@ export default {
       }
     }
   }
+}
+.center{
+  margin-top: 60px;
 }
 </style>

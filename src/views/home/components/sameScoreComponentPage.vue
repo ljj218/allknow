@@ -190,7 +190,6 @@ export default {
   },
   methods: {
     initData() {
-      console.log(this.choiceMode);
       if (
         this.univList.length > 0 &&
         this.MajorList.length > 0 &&

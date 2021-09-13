@@ -154,6 +154,7 @@ export default {
       } catch (error) {}
     },
     link() {
+      let url='';
       if (mobileCheck()) {
         url = `https://m.51sdx.com/m/est/vipProfile`;
       } else {

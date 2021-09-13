@@ -90,6 +90,7 @@ export default {
     }
     .ml {
       margin-left: 12px;
+      font-size: 14px;
     }
   }
   .flex {

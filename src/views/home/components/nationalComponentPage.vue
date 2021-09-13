@@ -1,7 +1,7 @@
 
 <template>
   <div class="provPage">
-    <p class="headTitle">— 2021年全国考生累计<span>1078万</span></p>
+    <p class="headTitle">— 2021年全国考生累计<span>1078万</span> —</p>
     <baseInfo :selectProvBaseData="baseData" />
     <banner class="mart" />
     <listTile
