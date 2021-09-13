@@ -31,9 +31,24 @@
       </div>
     </div>
 
-    <provComponentPage v-show="activeNames == 1" :selectProv="selectProv" ref="provComponentPage"></provComponentPage>
-    <sameScoreComponentPage v-show="activeNames == 2" :selectProv="selectProv" :choiceMode="choiceMode" ref="sameScoreComponentPage"></sameScoreComponentPage>
-    <nationalComponentPage v-show="activeNames == 3" :selectProv="selectProv" ref="nationalComponentPage"></nationalComponentPage>
+    <img src="../../assets/image/link.png" class="link" @click="link" />
+
+    <provComponentPage
+      v-show="activeNames == 1"
+      :selectProv="selectProv"
+      ref="provComponentPage"
+    ></provComponentPage>
+    <sameScoreComponentPage
+      v-show="activeNames == 2"
+      :selectProv="selectProv"
+      :choiceMode="choiceMode"
+      ref="sameScoreComponentPage"
+    ></sameScoreComponentPage>
+    <nationalComponentPage
+      v-show="activeNames == 3"
+      :selectProv="selectProv"
+      ref="nationalComponentPage"
+    ></nationalComponentPage>
 
     <van-popup position="bottom" v-model="show">
       <van-picker
@@ -54,8 +69,8 @@ import prov from "../../assets/Json/prov.json";
 import nationalComponentPage from "./components/nationalComponentPage.vue";
 import provComponentPage from "./components/provComponentPage.vue";
 import sameScoreComponentPage from "./components/sameScoreComponentPage.vue";
-import {choiceMode} from "@http/api";
-
+import { choiceMode } from "@http/api";
+import { mobileCheck } from "../../utils/index.js";
 export default {
   name: "Home",
   data() {
@@ -64,7 +79,7 @@ export default {
       show: false,
       provList: "",
       province: "北京",
-      choiceMode:''
+      choiceMode: "",
     };
   },
   computed: {
@@ -93,7 +108,7 @@ export default {
   },
   created() {
     this.provList = prov.data;
-    this.province=this.$route.query.province||'北京';
+    this.province = this.$route.query.province || "北京";
   },
   mounted() {
     this.getchoiceMode();
@@ -107,13 +122,12 @@ export default {
         this.show = false;
       }
       this.activeNames = num;
-      if(num==1){
-         this.$refs.provComponentPage.initData();
-       
-      }else if(num==3){
+      if (num == 1) {
+        this.$refs.provComponentPage.initData();
+      } else if (num == 3) {
         this.$refs.nationalComponentPage.initData();
       }
-      document.documentElement.scrollTop=0;
+      document.documentElement.scrollTop = 0;
     },
     onConfirm(value) {
       this.province = value;
@@ -127,19 +141,26 @@ export default {
       // this.$toast("取消");
     },
     async getchoiceMode() {
-			try {
-				let data = await choiceMode({provinceId:this.selectProv.provinceId});
-				if (data.resultCode == '0000') {
-					this.choiceMode = data;
-					if (data.choiceMode != 0) {
-						this.majorTypeId = '3';
-					} else {
-						this.majorTypeId = '2';
-					}
-				}
-			} catch (error) {
-			}
-		},
+      try {
+        let data = await choiceMode({ provinceId: this.selectProv.provinceId });
+        if (data.resultCode == "0000") {
+          this.choiceMode = data;
+          if (data.choiceMode != 0) {
+            this.majorTypeId = "3";
+          } else {
+            this.majorTypeId = "2";
+          }
+        }
+      } catch (error) {}
+    },
+    link() {
+      if (mobileCheck()) {
+        url = `https://m.51sdx.com/m/est/vipProfile`;
+      } else {
+        url = `https://m.51sdx.com/vipRight2`;
+      }
+      window.open(url, "_blank");
+    },
   },
   components: {
     navBar,
@@ -147,11 +168,11 @@ export default {
     provComponentPage,
     sameScoreComponentPage,
   },
-  watch:{
-    'selectProv.provinceId'(val){
-     this.getchoiceMode();
-    }
-  }
+  watch: {
+    "selectProv.provinceId"(val) {
+      this.getchoiceMode();
+    },
+  },
 };
 </script>
 
@@ -159,13 +180,14 @@ export default {
 .home {
   position: relative;
   min-height: 100vh;
+  padding-bottom: 80px;
   background-color: #f8f8f8;
   .fixed-container {
     width: 375px;
     height: 84px;
     position: relative;
     .fixed {
-     width: 375px;
+      width: 375px;
       position: fixed;
       top: 0;
       z-index: 9;
@@ -204,6 +226,14 @@ export default {
         }
       }
     }
+  }
+  .link {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    z-index: 3;
   }
 }
 </style>
