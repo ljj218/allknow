@@ -1,7 +1,7 @@
 <!--
  * @Author: dragon
  * @Date: 2021-09-08 17:43:56
- * @LastEditTime: 2021-09-09 09:54:56
+ * @LastEditTime: 2021-09-15 10:13:17
  * @LastEditors: dragon
  * @Description: 
  * @FilePath: \allknow\src\components\echartLine.vue
@@ -84,6 +84,8 @@ export default {
   watch:{
     list(val){
       if(val){
+         this.xAxisData=[];
+         this.seriesData=[];
         val.forEach(item => {
           this.xAxisData.push(item.score);
           this.seriesData.push(item.number);

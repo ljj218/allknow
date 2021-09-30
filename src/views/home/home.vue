@@ -36,6 +36,7 @@
     <provComponentPage
       v-show="activeNames == 1"
       :selectProv="selectProv"
+      :choiceMode="choiceMode"
       ref="provComponentPage"
     ></provComponentPage>
     <sameScoreComponentPage
@@ -154,7 +155,7 @@ export default {
       } catch (error) {}
     },
     link() {
-      let url='';
+      let url = "";
       if (mobileCheck()) {
         url = `https://m.51sdx.com/m/est/vipProfile`;
       } else {

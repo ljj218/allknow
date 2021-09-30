@@ -1,7 +1,7 @@
 <!--
  * @Author: dragon
  * @Date: 2021-09-08 17:43:56
- * @LastEditTime: 2021-09-09 09:57:11
+ * @LastEditTime: 2021-09-15 10:11:29
  * @LastEditors: dragon
  * @Description: 
  * @FilePath: \allknow\src\views\home\components\baseInfo.vue
@@ -14,7 +14,7 @@
       <li class="base-info-item">
         <p>
           <span>{{ selectProvBaseData.reportNum | formatNum }}</span>
-          <span class="unit" v-if="selectProvBaseData.reportNum > 10000"
+          <span class="unit" v-if="selectProvBaseData.reportNum >= 10000"
             >万</span
           >
           <span class="tag">份</span>

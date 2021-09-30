@@ -31,7 +31,7 @@
         </div>
         <div class="count">
           {{ item.value | formatNum }}
-          <span class="num" v-if="item.value > 10000">万</span>
+          <span class="num" v-if="item.value >= 10000">万</span>
           <span class="tag">次</span>
         </div>
       </li>

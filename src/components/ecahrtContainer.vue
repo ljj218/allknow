@@ -1,7 +1,7 @@
 <!--
  * @Author: dragon
  * @Date: 2021-09-08 17:43:56
- * @LastEditTime: 2021-09-09 09:54:46
+ * @LastEditTime: 2021-09-15 10:11:05
  * @LastEditors: dragon
  * @Description: 
  * @FilePath: \allknow\src\components\ecahrtContainer.vue
@@ -21,7 +21,7 @@
           </div>
           <div class="value">
             {{n.value|formatNum}}
-            <span v-if="n.value>10000">万</span>
+            <span v-if="n.value>=10000">万</span>
             <span class="num">次</span>
           </div>
         </div>

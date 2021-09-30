@@ -23,7 +23,7 @@
       </div>
       <div class="count">
         {{ n.reportNum | formatNum }}
-        <span class="num">万</span>
+        <span class="num" v-if="n.reportNum>=10000">万</span>
         <span class="tag">次</span>
       </div>
     </div>

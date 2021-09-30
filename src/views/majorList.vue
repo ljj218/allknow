@@ -54,7 +54,7 @@
           </div>
           <div class="count">
             {{ item.reportNum | formatNum }}
-            <span class="num" v-if="item.reportNum > 10000">万</span>
+            <span class="num" v-if="item.reportNum >= 10000">万</span>
             <span class="tag">次</span>
           </div>
         </div>

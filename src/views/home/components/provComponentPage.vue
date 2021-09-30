@@ -3,7 +3,7 @@
   <div class="provPage">
     <baseInfo :selectProvBaseData="selectProvBaseData" />
     <banner />
-    <div class="container">
+    <div class="container" v-show="lineList.length>0">
       <itemTitle title="本省考生成绩分布图" />
       <echartLine :list="lineList" />
       <div class="more flex justify-content align-items" @click="openWindow">
@@ -91,6 +91,9 @@ export default {
       type: Object,
       required: true,
     },
+    choiceMode: {
+      type: [Object , String],
+    },
   },
   data() {
     return {
@@ -99,7 +102,7 @@ export default {
       MajorList: [],
       cityOuterList: [],
       provBaseList: [],
-      lineList: null,
+      lineList: [],
     };
   },
   computed: {},
@@ -118,7 +121,7 @@ export default {
       this.getReportMajorPage();
       this.getReportCityOuterPage();
       this.getReportCityPage();
-      this.gotRank();
+      // this.gotRank();
     },
 
     //当前省 填报基础数据
@@ -147,6 +150,7 @@ export default {
     },
     //当前省 考生填报专业
     async getReportMajorPage() {
+      this.MajorList = [];
       try {
         let res = await reportMajorPage({
           provinceId: this.selectProv.provinceId,
@@ -199,11 +203,17 @@ export default {
       } catch (error) {}
     },
     async gotRank() {
+      let majorTypeId=2;
+      if (this.choiceMode.scoreMode ==1) {
+        majorTypeId = "3";
+      } else {
+        majorTypeId = "2";
+      }
       try {
         let res = await getRank({
-          provinceId: 1,
+          provinceId: this.selectProv.provinceId,
           year: 2021,
-          majorTypeId: 3,
+          majorTypeId: majorTypeId,
         });
         this.lineList = res.data || [];
       } catch (error) {}
@@ -222,6 +232,9 @@ export default {
     "selectProv.provinceId"(newVal, oldVal) {
       this.MajorList = [];
       this.initData();
+    },
+     choiceMode(val) {
+      this.gotRank();
     },
   },
 };
